@@ -1,0 +1,44 @@
+
+<div class="giris-alani">
+    <mat-card>Kayıt olmak için bilgilerinizi girin.</mat-card>
+    <form (ngSubmit)="registerUser(signupForm)" #signUpForm="ngForm" [formGroup]="signupForm">
+    <div class="input-alani">
+    <div class="isim-alani">
+      <mat-form-field appearance="fill">
+        <mat-label>İsminizi girin</mat-label>
+        <input matInput id="name" name="name" placeholder="İsim" required ngModel formControlName="uname">
+      </mat-form-field>
+    </div>
+    <div class="soyisim-alani">
+        <mat-form-field appearance="fill">
+            <mat-label>Soyisminizi girin</mat-label>
+            <input matInput id="surname" name="surname" placeholder="Soyisim" required ngModel formControlName="surname">
+          </mat-form-field>
+    </div>
+    <div class="kullanici-adi-alani">
+        <mat-form-field appearance="fill">
+          <mat-label>Kullanıcı adınızı girin</mat-label>
+          <input matInput #input maxlength="10" id="username" name="username" placeholder="kullanici_adi" required ngModel formControlName="username">
+          <mat-hint align="end">{{input.value?.length || 0}}/10</mat-hint>
+        </mat-form-field>
+    </div>
+    <div class="sifre-alani">
+      <mat-form-field appearance="fill">
+        <mat-label>Şifrenizi girin</mat-label>
+        <input matInput id="password" name="password" [type]="hide ? 'password' : 'text'" required ngModel formControlName="password">
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Email</mat-label>
+        <input id="email" name="email" type="email" matInput placeholder="Ör. pat@example.com" ngModel formControlName="email">
+      </mat-form-field>
+    </div>
+    <div id="gonder-butonu">
+      <button type="submit" mat-raised-button color="primary" [disabled]="!signupForm.valid">Kayıt ol</button>
+      <button mat-button routerLink="/sign-in" routerLinkActive="activebutton">Geri dön</button>
+    </div>
+  </div>
+</form>
+</div>

@@ -1,0 +1,34 @@
+
+<div class="giris-alani">
+    <mat-card>Giriş yapmak için bilgilerinizi girin.</mat-card>
+    <form (ngSubmit)="checkUser(loginForm)" #signInForm="ngForm" [formGroup]="loginForm">
+      <div class="input-alani">
+      <div class="kullanici-adi-alani">
+        
+        <mat-form-field appearance="fill" >
+          <mat-label for="username">Kullanıcı adınızı girin</mat-label>
+          <input id="username" name="username" matInput #input maxlength="15" placeholder="kullanici_adi" ngModel formControlName="username">
+          <mat-hint align="end">{{input.value?.length || 0}}/15</mat-hint>
+        </mat-form-field>
+      </div>
+      <div class="sifre-alani">
+        <mat-form-field appearance="fill">
+          <mat-label for="password">Şifrenizi girin</mat-label>
+          <input id="password" name="password" matInput [type]="hide ? 'password' : 'text'" ngModel formControlName="password">
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        </mat-form-field>
+      </div>
+      <div id="gonder-butonu">
+        <button type="submit" mat-raised-button color="primary" [disabled]="!loginForm.valid" >Giriş Yap</button>
+        <button mat-button routerLink="/sign-up" routerLinkActive="activebutton">Kayıt ol</button>
+      </div>
+      <p *ngIf="loginForm?.controls?.username?.errors?.whitespace" style="color: red">
+          *Boşluk karakterini kullanamazsınız.
+      </p>
+      </div>
+  </form>
+</div>
+
+  

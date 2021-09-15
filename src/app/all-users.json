@@ -1,0 +1,16 @@
+{
+    "users":[
+    {
+        "uid": 0,
+        "username":"aybars12",
+        "password":"123456",
+        "email":"aybars@aybars.com"
+    },
+    {
+        "uid": 1,
+        "username":"srabya12",
+        "password":"1234",
+        "email":"aybarss@aybars.com"
+    }
+    ]
+}
