@@ -51,7 +51,6 @@ export class SignUpComponent implements OnInit {
     }
   }
 
-
   resetForm(){
     this.signupForm = new FormGroup({
       uname: new FormControl(""),
@@ -70,7 +69,6 @@ export class SignUpComponent implements OnInit {
         Validators.email,
       ])
     
-
     })
   }
   showSpinner(){
