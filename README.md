@@ -17,13 +17,13 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 ## Login
 
-You can use mocking data from `src/lib/services/user.service.ts` to test the login page,<br
+You can use mocking data from `src/lib/services/user.service.ts` to test the login page,  
 
 ![Alt text](/src/lib/images/imgLogin.png?raw=true "Login Screen Screenshot")
 
 ## Register
 
-Since the application uses mocking data, you can register and login with the account untill you restart the app.
+Since the application uses mocking data, you can register and login with the account untill you restart the app.  
 
 
 ![Alt text](/src/lib/images/imgRegister.png?raw=true "Register Screen Screenshot")
